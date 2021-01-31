@@ -19,8 +19,8 @@ export class App extends React.Component {
         };
       }
 
-      onHeartChange = (value) => {
-        this.setState({heart:value.target.value})
+      onHeartChange = (e) => {
+        this.setState({heart:e.target.value})
         this.calculateWater()
 
       }
@@ -31,15 +31,17 @@ export class App extends React.Component {
       //}  Bonus 1
       incrIncreaseSteps = ()=>{
         this.setState({steps:this.state.steps + 1000})
+
       }
       
       decreaseSteps=()=>{
         this.setState({steps: this.state.steps - 1000})
+
       }
       
-      onTemperatureChange = (value) => {
-        this.setState({temperature:value.target.value})
-        this.calculateWater()
+      onTemperatureChange = (e) => {
+        this.setState({temperature:e.target.value})
+
       }
     
 
@@ -97,6 +99,7 @@ export class App extends React.Component {
     render() {
         return ( 
           <div className="container-fluid">
+            <h1  style= {{ fontSize : "30px",textAlign:"center", color:"white", padding :"50px"}}>Konw how many amount of water you should drink</h1>
               <div className="row">
             {/*Water */}
             <Box icon={"local_drink"} color={"#3A85FF"} 
