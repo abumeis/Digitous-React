@@ -8,11 +8,11 @@ class List extends React.Component {
         <div>
              <p>List</p>    
             <ul>
-              {this.props.items.map((items) => {
+              {this.props.items.map((items, index) => {
                 return (
-              <li></li>
+              <li key={index}>{ items.name} - {items.price}€ </li>
             );
-          })}
+          }) }
         </ul>     
         </div>
 
