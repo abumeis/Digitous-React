@@ -10,10 +10,13 @@ class List extends React.Component {
             <ul>
               {this.props.items.map((items, index) => {
                 return (
-              <li key={index}>{ items.name} - {items.price}€ </li>
+              <li key={index}>{ items.name} = {items.price}€ </li>
+              
             );
+            
           }) }
         </ul>     
+        
         </div>
 
         );
