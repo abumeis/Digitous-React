@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Add from './Components/Add';
 import List from './Components/List';
-//import Pay from './Components/Pay';
+import Pay from './Components/Pay';
 import Button from './Components/Button';
 
 
@@ -73,6 +73,7 @@ class App extends React.Component {
             <Add addItems={this.addItem }/>}  
             {this.state.activeTab === "Add" && <Add></Add>} 
             {this.state.activeTab === 'list' && <List items={this.state.items} />}  
+            <Pay items={this.state.items}></Pay>
           </div>
           </div>
           </div>
