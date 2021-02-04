@@ -14,19 +14,46 @@ class Pay extends React.Component {
         }
       } 
 
+      
 handelSelect=(name, price)=>{
 console.log("name", name,"price",price)
+const obj  = {
+    name: name,
+    price: price
+  };
+  const newBasket = this.state.basket;
+  newBasket.push(obj );
+  console.log('newBasket', newBasket);
+  this.setState({
+    basket : newBasket
+  });
+ 
 }
 
 render(){
   return(
     <div> 
-        <p >Total={this.state.total} €</p>       
-        {this.props.items.map(article => (
-                    <Card onClick={this.handelSelect} itemName={article.name} price={article.price}
-                    />
-                ))}
+        <div className="row">    
+        <div>{this.props.items.map((article, index) => (
+        <Card  key={index} onClick={this.handelSelect} itemName={article.name} price={article.price}></Card>
+         ))}</div>
+        </div>
 
+
+        <div className="row">
+        <div className="col-12">
+          <p>TTC: {this.state.total} €</p>
+        </div>
+        <div className="col-12">
+          <p>TVA: {this.state.totalVat} €</p>
+        </div>
+        <div className="col-12">
+          <p> Eco tax: {this.state.totalEcoTax} €</p>
+        </div>
+        <div className="col-12">
+          <p style={{fontSize: "2em"}}>Total: {this.state.totalAfterTax} €</p>
+        </div>
+      </div>
     </div>  
 
     )}
@@ -34,13 +61,7 @@ render(){
 
 export default Pay
 
-//Dans `Pay.jsx` (qui reçoit la props `items` contenant le state `items` de `App.js`) : 
-//
-//- Créez le state avec les clés suivantes :
-//    - `basket` : array vide
-//    - `total`, `totalTVA`, `totalEcoTax` et `totalTTC` : valeur par défaut `0`
-//- Créer la méthode `handleSelect` qui reçoit les paramètres `name` et `price` et qui fait un console.log des paramètres
-//- Dans le `render`, créer une `div` avec un `p` qui affiche la state `total`
-//- Charger les `Card` dynamiquement à partir de la props `items` (c’est un array, alors vous pouvez utiliser `map`)
-//- Passez les props `itemName`, `price` avec leurs valeurs et `onClick` avec la méthode `handleSelect` dans le composant `Card`
+
+
+
 
