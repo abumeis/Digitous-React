@@ -71,9 +71,8 @@ class App extends React.Component {
            <Button isSelected={this.state.activeTab === "pay" ? "form-control btn btn-primary" : "form-control btn btn-light"} onClick={this.selectPay}>Pay</Button>
             {this.state.activeTab === 'add' && 
             <Add addItems={this.addItem }/>}  
-            {this.state.activeTab === "Add" && <Add></Add>} 
             {this.state.activeTab === 'list' && <List items={this.state.items} />}  
-            <Pay items={this.state.items}></Pay>
+            {this.state.activeTab === 'pay' && <Pay items={this.state.items}/>}
           </div>
           </div>
           </div>
