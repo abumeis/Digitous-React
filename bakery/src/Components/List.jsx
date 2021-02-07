@@ -6,13 +6,13 @@ class List extends React.Component {
     render() {
         return (
         <div>
-             <p>List</p>    
-            <ul>
+            <h2 style={{textAlign:"center", paddingBottom:"20px"}}>Products list</h2>    
+            <ol style={{ listStyle: "none"}}>
               {this.props.items.map((items, index) => {
                 return (
-              <li key={index}>{ items.name} = {items.price}€ </li>);
+              <li className="article-list__item"  key={index}> <span style={{fontFamily:"courgette"}}>{ items.name} </span > <span style={{float:"right", fontWeight:"bold"}}>{items.price}€</span> </li>);
             }) }
-        </ul>     
+        </ol>    
         
         </div>
 
@@ -21,3 +21,4 @@ class List extends React.Component {
     }
     
     export default List;
+

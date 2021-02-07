@@ -22,9 +22,9 @@ class App extends React.Component {
   }
 
 
-  // To add the new items to the items array
+  // To add the new items to the list array
   addItem = (productName, price) => {
-    console.log("produit",productName, "prix" ,price)
+    console.log("productName",productName, "price" ,price)
     const items = {
       name: productName,
       price: price
@@ -63,20 +63,29 @@ class App extends React.Component {
   render() {
     return (
         <div className="container ">
-          <div className="row">
-              <div className="col-4">
-           <h1 className="m-2">Bakery </h1>
+           <h1 className="m-5 " style={{textAlign: "center" , textShadow:""}}>Bakery </h1>
+           <div className="row">
+            <div className="col-4">
            <Button isSelected={this.state.activeTab === "add" ? "form-control btn btn-primary" : "form-control btn btn-light"} onClick={this.selectAdd}>Add</Button>
+           </div>
+           <div className="col-4">
            <Button isSelected={this.state.activeTab === "list" ? "form-control btn btn-primary" : "form-control btn btn-light"} onClick={this.selectList}>List</Button>
+           </div>
+           <div className="col-4">
            <Button isSelected={this.state.activeTab === "pay" ? "form-control btn btn-primary" : "form-control btn btn-light"} onClick={this.selectPay}>Pay</Button>
-            {this.state.activeTab === 'add' && 
-            <Add addItems={this.addItem }/>}  
-            {this.state.activeTab === 'list' && <List items={this.state.items} />}  
+           </div>
+           </div>
+
+           <div className="row  justify-content-center pt-5">
+           {this.state.activeTab === 'add' && <Add addItems={this.addItem }/>} 
+           </div>
+           <div className="row  justify-content-center pt-5">
+            {this.state.activeTab === 'list' && <List items={this.state.items} />}
+            </div>
+            <div className="row justify-content-center pt-5">    
             {this.state.activeTab === 'pay' && <Pay items={this.state.items}/>}
+            </div>
           </div>
-          </div>
-          </div>
-       
     );
   }
 }

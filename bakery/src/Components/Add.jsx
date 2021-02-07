@@ -33,13 +33,14 @@ class Add extends React.Component {
       render() {
       return (
         <div>
-                <p>Add</p>
-                <div className="input-group mb-3">
-                    <input onChange={this.updateProductName} type="text" className="form-control" placeholder="Enter item" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                    <button className="btn btn-outline-secondary" type="button" onClick={this.add}>Add</button>
+           <div className="input-group mb-3">
+                    <input onChange={this.updateProductName} type="text" className="form-control" placeholder="Add item" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <button className="btn btn-primary" type="button" onClick={this.add}>Add</button>
+        </div>
+                <div>
+                <input  type="range"  min="1" max="10" value={this.state.price}  onChange={ this.updatePrice}  style={{width:"400px"}}></input>
+                <p><span style={{float:"right", fontWeight:"bold", fontSize:"30px"}}>{this.state.price}€</span></p>
                 </div>
-                <input  type="range"  min="1" max="10" value={this.state.price}  onChange={ this.updatePrice} ></input>
-                <p>{this.state.price}€</p>
             </div>
       );
     }
