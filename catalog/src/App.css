@@ -1,0 +1,13 @@
+body {
+  background-color: black;
+}
+.HomePage {
+  text-align: center;
+  text-decoration: none;
+}
+div,
+h4,
+p {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
