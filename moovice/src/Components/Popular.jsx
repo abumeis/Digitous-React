@@ -1,5 +1,5 @@
 import React from "react";
-//import Card from "./Card";
+import Card from './Card';
 
 
 
@@ -38,7 +38,15 @@ import React from "react";
   render() {
   return (
     <div className="">
-        {this.state.movies.map(list => {
+       {this.state.movies.map(movie => {
+            return (<Card
+                  pic={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                      title={movie.title}
+                      discription={movie.overview}
+                      release_date={movie.release_date}
+                      popularity={movie.popularity}
+                  />)
+                })}
             </div>                   
                          
       );
@@ -47,5 +55,9 @@ import React from "react";
 
 
 export default  Popular;
+
+
+
+
 
 

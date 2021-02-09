@@ -7,6 +7,7 @@ import WeeklyBattle from "./Components/WeeklyBattle"
 import Popular from "./Components/Popular"
 import PopularBattle from "./Components/PopularBattle"
 import Favorites from "./Components/Favorites"
+//import Card from "./Components/Card"
 
 
  class App extends React.Component {
