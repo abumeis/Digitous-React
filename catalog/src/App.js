@@ -93,7 +93,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="pt-5">
-          <h1 className="pt-5" style={{alignItems:"center"}}>filmothèque</h1>
+          <h1 className="p-5" style={{textAlign:"center"}}>filmothèque</h1>
             <Switch>
               <Route exact path="/">
                 <HomePage movie={this.movies}></HomePage>
