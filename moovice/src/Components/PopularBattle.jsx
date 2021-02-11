@@ -24,11 +24,28 @@ class PopularBattle extends React.Component {
       });
   }
 
-  onClickCardBattle = (id) => {
-    let film = id + 2;
+  onClickCardBattle = (num, idMovie) => {
+    let film = num + 2;
     this.setState({
       currentBattle: film,
     });
+    console.log("idMovie", idMovie);
+    let save = localStorage.getItem("favorite");
+    let favList = [];
+    if (save) {
+      console.log("favList1", favList);
+      favList = JSON.parse(save);
+      favList.push(idMovie);
+      favList = Array.from(new Set(favList));
+
+      console.log("push", favList);
+      localStorage.setItem("favorite", JSON.stringify(favList));
+    } else {
+      console.log("favList2", favList);
+      favList = [];
+      favList.push(idMovie);
+      localStorage.setItem("favorite", JSON.stringify(favList));
+    }
   };
 
   render() {
@@ -40,17 +57,19 @@ class PopularBattle extends React.Component {
         <div>
           {this.state.movies
             .slice(this.state.currentBattle, this.state.currentBattle + 2)
-            .map((movie) => {
+            .map((movie, index) => {
               return (
                 <button
                   onClick={() =>
-                    this.onClickCardBattle(this.state.currentBattle)
+                    this.onClickCardBattle(this.state.currentBattle, movie.id)
                   }
                 >
-                  <Card
-                    pic={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-                    title={movie.title}
-                  />
+                  <p key={index}>
+                    <Card
+                      pic={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+                      title={movie.title}
+                    />
+                  </p>
                 </button>
               );
             })}

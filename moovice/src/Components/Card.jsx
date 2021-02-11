@@ -4,11 +4,13 @@ class Card extends React.Component {
   render() {
     return (
       <div>
-        <img className="" src={this.props.pic} alt="" />
-        {this.props.title}
-        {this.props.discription}
-        {this.props.release_date}
-        {this.props.popularity}
+        <div>
+          <img className="" src={this.props.pic} alt="" />
+        </div>
+        <h>{this.props.title}</h>
+        <p>{this.props.discription}</p>
+        <p>{this.props.release_date}</p>
+        <p>{this.props.popularity}</p>
       </div>
     );
   }
