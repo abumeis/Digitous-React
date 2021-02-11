@@ -29,19 +29,14 @@ class PopularBattle extends React.Component {
     this.setState({
       currentBattle: film,
     });
-    console.log("idMovie", idMovie);
-    let save = localStorage.getItem("favorite");
+    let film = localStorage.getItem("favorite");
     let favList = [];
-    if (save) {
-      console.log("favList1", favList);
-      favList = JSON.parse(save);
+    if (film) {
+      favList = JSON.parse(film);
       favList.push(idMovie);
       favList = Array.from(new Set(favList));
-
-      console.log("push", favList);
       localStorage.setItem("favorite", JSON.stringify(favList));
     } else {
-      console.log("favList2", favList);
       favList = [];
       favList.push(idMovie);
       localStorage.setItem("favorite", JSON.stringify(favList));
