@@ -1,17 +1,19 @@
 import React from "react";
 
- class Favorites extends React.Component {
+class Favorites extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      favId: localStorage.getItem("favorite") || [],
+    };
+  }
   render() {
-  return (
-    <div className="">
-        
-                <h1>favorites</h1>
+    return (
+      <div className="">
+        <h1>favorites</h1>
+      </div>
+    );
+  }
+}
 
-    </div>
-      );
-    }
- }
-
-
-export default  Favorites
-;
+export default Favorites;

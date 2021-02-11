@@ -1,17 +1,13 @@
 import React from "react";
 
-
-
- class WeeklyBattle extends React.Component {
+class WeeklyBattle extends React.Component {
   render() {
-  return (
-    <div className="">
+    return (
+      <div className="">
         <h1>WeeklyBattle</h1>
+      </div>
+    );
+  }
+}
 
-    </div>
-      );
-    }
- }
-
-
-export default  WeeklyBattle;
+export default WeeklyBattle;
