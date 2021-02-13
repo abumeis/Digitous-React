@@ -39,7 +39,6 @@ class Favorites extends React.Component {
     return (
       <div>
         <p>Favorites</p>
-        {this.state.favIDs.length === 0 && <p>your fav list is empty </p>}
         {this.state.movies.map((movie) => {
           return (
             <Card

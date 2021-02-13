@@ -12,7 +12,7 @@ class Weekly extends React.Component {
 
   componentDidMount() {
     let TODAY = moment().format("YYYY-MM-DD");
-    let LAST_WEEK = moment().add(-7, "day").format("YYYY-MM-DD");
+    let LAST_WEEK = moment().add(-7, "days").format("YYYY-MM-DD");
     fetch(
       `http://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${LAST_WEEK}&primary_release_date.lte=${TODAY}&api_key=1d921ecda80f1fbd29ea921afc924198`
     )
