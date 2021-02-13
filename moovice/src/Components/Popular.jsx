@@ -18,13 +18,12 @@ class Popular extends React.Component {
         return response.json();
       })
       .then((response) => {
-        console.log(response.results);
+        console.log(response);
         this.setState({
           movies: response.results,
         });
       });
   }
-
   render() {
     return (
       <div className="">
